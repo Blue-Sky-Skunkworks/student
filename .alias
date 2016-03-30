@@ -1,0 +1,76 @@
+# aliases for the Missoula Civic Hackathon Student Program
+
+alias a=alias
+alias lsm='ls -tr --color=auto'
+alias ls='\ls --color=auto'
+alias ll='\ls -ltr --color=auto'
+alias pg=less
+alias e='emacs -nw'
+alias eq='emacs -q -nw -l ~/emacs/quick-load.el'
+alias rm~="rm -f *~"
+alias df="df -h"
+alias c=clear
+alias dt='dmesg | tail'
+alias d=date
+alias pd=pushd
+alias po=popd
+alias mime='file --mime-type'
+alias sbcl="sbcl --noinform"
+alias sbcls="ps aux | grep sbcl"
+alias l=less
+alias sp='apt-cache search --names-only'
+alias xpdf="/usr/bin/xpdf -fullscreen -z height"
+alias diff=colordiff
+alias duf="du -ach | sort -h"
+alias du="du -h"
+alias free="free -mt"
+alias ps="ps auxf"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias wget="wget -c"
+alias histg="history | grep"
+alias apt='sudo aptitude install'
+alias apts='sudo aptitude search'
+
+# get the html URL in the X11 clipboard
+alias wgc="wget \`xclip -o\`"
+
+function p { cd ~/quicklisp/local-projects/$1 ; }
+
+# show man page examples
+function eg {
+      MAN_KEEP_FORMATTING=1 man "$@" 2>/dev/null \
+                | sed --quiet --expression='/^E\(\x08.\)X\(\x08.\)\?A\(\x08.\)\?M\(\x08.\)\?P\(\x08.\)\?L\(\x08.\)\?E/{:a;p;n;/^[^ ]/q;ba}' \
+                          | ${MANPAGER:-${PAGER:-pager -s}}
+                            }
+
+function extract {
+ if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+ else
+    if [ -f $1 ] ; then
+        # NAME=${1%.*}
+        # mkdir $NAME && cd $NAME
+        case $1 in
+          *.tar.bz2)   tar xvjf ../$1    ;;
+          *.tar.gz)    tar xvzf ../$1    ;;
+          *.tar.xz)    tar xvJf ../$1    ;;
+          *.lzma)      unlzma ../$1      ;;
+          *.bz2)       bunzip2 ../$1     ;;
+          *.rar)       unrar x -ad ../$1 ;;
+          *.gz)        gunzip ../$1      ;;
+          *.tar)       tar xvf ../$1     ;;
+          *.tbz2)      tar xvjf ../$1    ;;
+          *.tgz)       tar xvzf ../$1    ;;
+          *.zip)       unzip ../$1       ;;
+          *.Z)         uncompress ../$1  ;;
+          *.7z)        7z x ../$1        ;;
+          *.xz)        unxz ../$1        ;;
+          *.exe)       cabextract ../$1  ;;
+          *)           echo "extract: '$1' - unknown archive method" ;;
+        esac
+    else
+        echo "$1 - file does not exist"
+    fi
+fi
+}
