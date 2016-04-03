@@ -1,0 +1,8 @@
+#!/bin/bash
+
+useradd -s /bin/bash student
+mkdir /home/student
+chown student:student /home/student
+cd /home/student
+sudo -u student git clone https://github.com/Blue-Sky-Skunkworks/student.git .
+
