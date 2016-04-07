@@ -21,6 +21,13 @@
      delight
      ;;     dash
      with-editor
+     projectile
+     helm
+     helm-slime
+     helm-ls-git
+     helm-projectile
+     helm-descbinds
+
      ))
 
 (require 'package)
