@@ -13,6 +13,7 @@
    "evil"
    "paredit"
    "programming"
+   "colors"
    "last"
 
          ))
