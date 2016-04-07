@@ -1,3 +1,9 @@
 [submodule "emacs/site-lisp/use-package"]
 	path = emacs/site-lisp/use-package
 	url = https://github.com/jwiegley/use-package.git
+[submodule "emacs/site-lisp/evil-plugins"]
+	path = emacs/site-lisp/evil-plugins
+	url = https://github.com/tarao/evil-plugins.git
+[submodule "emacs/site-lisp/magit"]
+	path = emacs/site-lisp/magit
+	url = https://github.com/magit/magit.git

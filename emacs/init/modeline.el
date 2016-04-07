@@ -33,11 +33,11 @@
 (column-number-mode 1)
 (line-number-mode 1)
 
-(use-package delight)
-
-(delight '((emacs-lisp-mode "ⓔ " lisp)
+(use-package delight
+  :config
+  (delight '((emacs-lisp-mode "ⓔ " lisp)
            (lisp-interaction-mode "ⓔ " lisp-interaction)
            (org-mode "ⓞ " org)
-           (slime-repl-mode "Ⓡ " slime-repl)))
+           (slime-repl-mode "Ⓡ " slime-repl))))
 
 (use-package inbox)

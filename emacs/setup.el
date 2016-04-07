@@ -15,7 +15,12 @@
      vline
      auto-complete
      ac-slime
-     scss-mode))
+     scss-mode
+     smart-mode-line
+     delight
+     ;;     dash
+     with-editor
+     ))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
