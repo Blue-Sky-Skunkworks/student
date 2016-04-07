@@ -12,6 +12,7 @@
    "utility"
    "evil"
    "paredit"
+   "programming"
    "last"
 
          ))
