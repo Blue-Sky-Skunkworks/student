@@ -4,23 +4,23 @@
 
 ;;(byte-recompile-directory "~/emacs/init" 0)
 
+
 (mapcar (lambda (name) (load-file (expand-file-name (format "%s/%s.el" "~/emacs/init" name))))
- '(
+        '(
 
-   "first"
-   "display"
-   "utility"
-   "evil"
-   "paredit"
-   "programming"
-   "colors"
-   "modeline"
-   "magit"
-   "ssh-keys"
-   "org"
-   "helm"
-   ;;  "keybindings"
-   "last"
+          "first"
+          "display"
+          "utility"
+          "evil"
+          "paredit"
+          "programming"
+          "colors"
+          "modeline"
+          "magit"
+          "ssh-keys"
+          "org"
+          "helm"
+          "keybindings"
+          "last"
 
-         ))
-
+          ))

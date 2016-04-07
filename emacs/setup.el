@@ -29,6 +29,9 @@
      helm-descbinds
 
      ctable
+     operate-on-number
+     smartrep
+
 
      ))
 
