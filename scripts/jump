@@ -4,6 +4,8 @@ scp pull admin@$1:
 ssh admin@$1 sudo /home/admin/pull
 ssh admin@$1 sudo cp -r /home/admin/.ssh /home/student
 ssh admin@$1 sudo chown -R student:student /home/student
+scp packages admin@$1:
+ssh admin@$1 sudo /home/admin/packages
 ssh student@$1
 
 
