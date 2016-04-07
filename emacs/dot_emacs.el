@@ -17,8 +17,9 @@
    "modeline"
    "magit"
    "ssh-keys"
+   "org"
    "helm"
-   "keybindings"
+   ;;  "keybindings"
    "last"
 
          ))
