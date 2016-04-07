@@ -16,6 +16,7 @@
    "colors"
    "modeline"
    "magit"
+   "ssh-keys"
    "last"
 
          ))
