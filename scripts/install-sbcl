@@ -2,7 +2,7 @@
 
 echo "Installing SBCL debian packages" | boxes -p h2v1
 
-ssh admin@$1 sudo apt-get install sbcl time texinfo texlive curl
+ssh admin@$1 sudo apt-get install sbcl time texinfo texlive curl hyperspec
 
 echo "Cloning the latest SBCL" | boxes -p h2v1
 
