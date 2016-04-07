@@ -11,6 +11,7 @@
      evil-leader
      evil-org
      evil-cleverparens
+     evit-magit
      mic-paren
      vline
      auto-complete
