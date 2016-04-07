@@ -15,6 +15,7 @@
    "programming"
    "colors"
    "modeline"
+   "magit"
    "last"
 
          ))
