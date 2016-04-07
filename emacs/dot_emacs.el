@@ -14,6 +14,7 @@
    "paredit"
    "programming"
    "colors"
+   "modeline"
    "last"
 
          ))
