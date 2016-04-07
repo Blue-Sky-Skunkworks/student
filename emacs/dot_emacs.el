@@ -18,6 +18,7 @@
    "magit"
    "ssh-keys"
    "helm"
+   "keybindings"
    "last"
 
          ))
