@@ -8,6 +8,7 @@
  '(
 
    "first"
+   "display"
    "utility"
    "evil"
    "paredit"
