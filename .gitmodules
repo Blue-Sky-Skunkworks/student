@@ -7,3 +7,9 @@
 [submodule "emacs/site-lisp/magit"]
 	path = emacs/site-lisp/magit
 	url = https://github.com/magit/magit.git
+[submodule "emacs/org-mode"]
+	path = emacs/org-mode
+	url = git://orgmode.org/org-mode.git
+[submodule "emacs/site-lisp/org-manage"]
+	path = emacs/site-lisp/org-manage
+	url = https://github.com/dmgerman/org-manage

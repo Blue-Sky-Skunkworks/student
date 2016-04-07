@@ -28,6 +28,8 @@
      helm-projectile
      helm-descbinds
 
+     ctable
+
      ))
 
 (require 'package)
