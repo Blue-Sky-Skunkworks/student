@@ -17,6 +17,7 @@
    "modeline"
    "magit"
    "ssh-keys"
+   "helm"
    "last"
 
          ))
