@@ -46,6 +46,9 @@
 ;; configuration in your ".emacs" in a way that is performance-oriented and,
 ;; well, just tidy.
 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
 (require 'use-package)
 
 

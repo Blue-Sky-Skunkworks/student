@@ -1,14 +1,12 @@
 ;; Missoula Civic Hackathon student emacs setup
 
 (defvar *student-emacs-packages*
-  '(use-package))
+  '(use-package
+     evil
+     paredit))
 
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list
-   'package-archives
-   '("melpa" . "http://melpa.org/packages/")
-   t)
-  (package-initialize)
-  (dolist (pkg *student-emacs-packages*)
-    (package-install pkg)))
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+(dolist (pkg *student-emacs-packages*)
+  (package-install pkg))
