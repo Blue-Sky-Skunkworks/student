@@ -1,0 +1,29 @@
+#!/bin/bash
+
+echo "Installing SBCL debian packages" | boxes -p h2v1
+
+ssh admin@$1 sudo apt-get install sbcl time texinfo texlive curl
+
+echo "Cloning the latest SBCL" | boxes -p h2v1
+
+ssh student@$1 git clone git://git.code.sf.net/p/sbcl/sbcl;
+
+echo "Building SBCL" | boxes -p h2v1
+
+ssh student@$1 "cd sbcl; sh make.sh"
+
+echo "Building SBCL Documentation" | boxes -p h2v1
+
+ssh student@$1 "cd sbcl/doc/manual; make"
+
+echo "Uninstalling binary SBCL and installing latest." | boxes -p h2v1
+
+ssh admin@$1 "sudo apt-get remove sbcl; cd /home/student/sbcl; sudo sh install.sh; sbcl --version"
+
+echo "Installing quicklisp" | boxes -p h2v1
+
+ssh student@$1 "mkdir lisp; cd lisp; curl -O https://beta.quicklisp.org/quicklisp.lisp; sbcl --load quicklisp.lisp --eval '(progn (quicklisp-quickstart:install) (exit))' "
+
+echo "Installing quicklisp packages" | boxes -p h2v1
+
+ssh student@$1 "cd lisp;sbcl --load /home/student/quicklisp/setup.lisp --eval '(progn (ql:add-to-init-file) (ql:quickload \"quicklisp-slime-helper\") (exit))' "
